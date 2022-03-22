@@ -13,3 +13,13 @@ export interface ValuesProps {
 export interface UserFormDataProp {
   userFormData: ValuesProps;
 }
+
+export interface SampleSizingProps {
+  Size: number;
+  Version: string;
+  Brand: string;
+  Bust: number;
+  Waist: number;
+  Hips: number;
+  LetterSize?: string;
+}

@@ -15,10 +15,13 @@ const ProductCard = () => {
       <Center height="50px">
         <Divider orientation="horizontal" size="100px" />
       </Center>
+      {
+        retrivedUserData ? 
       <SizingCard userFormData={retrivedUserData} />
-      <Box display="flex" justifyContent="center">
+      : <Box display="flex" justifyContent="center">
         <MeasurementMsg />
-      </Box>
+      </Box> 
+      }
     </Box>
   );
 };

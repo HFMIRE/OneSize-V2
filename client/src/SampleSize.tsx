@@ -1,6 +1,7 @@
-export const SampleSize = [
+import {SampleSizingProps } from './interface.model'
+export const SampleSize: SampleSizingProps[] = [
   {
-    UKSize: 4,
+    Size: 4,
     Version: "Straight",
     Brand: "ASOS",
     Bust: 78,
@@ -8,7 +9,7 @@ export const SampleSize = [
     Hips: 83.5,
   },
   {
-    UKSize: 6,
+    Size: 6,
     Version: "Straight",
     Brand: "ASOS",
     Bust: 80.5,
@@ -16,7 +17,7 @@ export const SampleSize = [
     Hips: 86,
   },
   {
-    UKSize: 8,
+    Size: 8,
     Version: "Straight",
     Brand: "ASOS",
     Bust: 83,
@@ -24,7 +25,7 @@ export const SampleSize = [
     Hips: 88.5,
   },
   {
-    UKSize: 10,
+    Size: 10,
     Version: "Straight",
     Brand: "ASOS",
     Bust: 88,
@@ -32,7 +33,7 @@ export const SampleSize = [
     Hips: 93.5,
   },
   {
-    UKSize: 12,
+    Size: 12,
     Version: "Straight",
     Brand: "ASOS",
     Bust: 93,
@@ -40,7 +41,7 @@ export const SampleSize = [
     Hips: 98.5,
   },
   {
-    UKSize: 14,
+    Size: 14,
     Version: "Straight",
     Brand: "ASOS",
     Bust: 98,
@@ -48,7 +49,7 @@ export const SampleSize = [
     Hips: 103.5,
   },
   {
-    UKSize: 16,
+    Size: 16,
     Version: "Straight",
     Brand: "ASOS",
     Bust: 103,
@@ -56,7 +57,7 @@ export const SampleSize = [
     Hips: 108.5,
   },
   {
-    UKSize: 18,
+    Size: 18,
     Version: "Straight",
     Brand: "ASOS",
     Bust: 110.5,
@@ -64,7 +65,7 @@ export const SampleSize = [
     Hips: 116,
   },
   {
-    UKSize: 4,
+    Size: 4,
     Version: "Straight",
     Brand: "PLT",
     Bust: 78.5,
@@ -73,7 +74,7 @@ export const SampleSize = [
     LetterSize: "XS",
   },
   {
-    UKSize: 6,
+    Size: 6,
     Version: "Straight",
     Brand: "PLT",
     Bust: 81,
@@ -82,7 +83,7 @@ export const SampleSize = [
     LetterSize: "S",
   },
   {
-    UKSize: 8,
+    Size: 8,
     Version: "Straight",
     Brand: "PLT",
     Bust: 86,
@@ -91,7 +92,7 @@ export const SampleSize = [
     LetterSize: "S",
   },
   {
-    UKSize: 10,
+    Size: 10,
     Version: "Straight",
     Brand: "PLT",
     Bust: 91,
@@ -100,7 +101,7 @@ export const SampleSize = [
     LetterSize: "M",
   },
   {
-    UKSize: 12,
+    Size: 12,
     Version: "Straight",
     Brand: "PLT",
     Bust: 96,
@@ -109,7 +110,7 @@ export const SampleSize = [
     LetterSize: "M",
   },
   {
-    UKSize: 14,
+    Size: 14,
     Version: "Straight",
     Brand: "PLT",
     Bust: 101,
@@ -118,7 +119,7 @@ export const SampleSize = [
     LetterSize: "L",
   },
   {
-    UKSize: 16,
+    Size: 16,
     Version: "Straight",
     Brand: "PLT",
     Bust: 106,
@@ -127,7 +128,7 @@ export const SampleSize = [
     LetterSize: "L",
   },
   {
-    UKSize: 18,
+    Size: 18,
     Version: "Straight",
     Brand: "PLT",
     Bust: 112,
@@ -136,7 +137,7 @@ export const SampleSize = [
     LetterSize: "XL",
   },
   {
-    UKSize: 4,
+    Size: 4,
     Version: "Straight",
     Brand: "BOOHOO",
     Bust: 80.6,
@@ -145,7 +146,7 @@ export const SampleSize = [
     LetterSize: "XS",
   },
   {
-    UKSize: 6,
+    Size: 6,
     Version: "Straight",
     Brand: "BOOHOO",
     Bust: 82.6,
@@ -154,7 +155,7 @@ export const SampleSize = [
     LetterSize: "S",
   },
   {
-    UKSize: 8,
+    Size: 8,
     Version: "Straight",
     Brand: "BOOHOO",
     Bust: 84.6,
@@ -163,7 +164,7 @@ export const SampleSize = [
     LetterSize: "S",
   },
   {
-    UKSize: 10,
+    Size: 10,
     Version: "Straight",
     Brand: "BOOHOO",
     Bust: 87,
@@ -172,7 +173,7 @@ export const SampleSize = [
     LetterSize: "M",
   },
   {
-    UKSize: 12,
+    Size: 12,
     Version: "Straight",
     Brand: "BOOHOO",
     Bust: 92,
@@ -181,7 +182,7 @@ export const SampleSize = [
     LetterSize: "M",
   },
   {
-    UKSize: 14,
+    Size: 14,
     Version: "Straight",
     Brand: "BOOHOO",
     Bust: 98,
@@ -190,7 +191,7 @@ export const SampleSize = [
     LetterSize: "L",
   },
   {
-    UKSize: 16,
+    Size: 16,
     Version: "Straight",
     Brand: "BOOHOO",
     Bust: 104,
@@ -199,7 +200,7 @@ export const SampleSize = [
     LetterSize: "L",
   },
   {
-    UKSize: 18,
+    Size: 18,
     Version: "Straight",
     Brand: "BOOHOO",
     Bust: 110,

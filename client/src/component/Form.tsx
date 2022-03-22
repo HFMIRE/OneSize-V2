@@ -3,8 +3,6 @@ import {
   Box,
   Input,
   Select,
-  RadioGroup,
-  Radio,
   Stack,
   Button,
   Heading,
@@ -12,9 +10,11 @@ import {
   HStack,
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
+import { Radio, RadioGroup } from "@chakra-ui/react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import { FormControl, FormLabel, FormErrorMessage } from "@chakra-ui/react";
 import { ValuesProps } from "../interface.model";
+import { useNavigate } from "react-router-dom";
 const Form = () => {
   const [formValue, setFormValue] = useState<ValuesProps | undefined>();
   const {
@@ -22,17 +22,18 @@ const Form = () => {
     register,
     formState: { errors, isSubmitting },
   } = useForm();
-
-  const arrayOfSize = [4, 6, 8, 10, 12, 14, 16, 18];
-  const arrayOfPlusSize = [20, 22, 24, 26, 28, 30, 32];
+const navigate = useNavigate()
+  const arrayOfSize: number[] = [4, 6, 8, 10, 12, 14, 16, 18];
+  const arrayOfPlusSize: number[] = [20, 22, 24, 26, 28, 30, 32];
   function onSubmit(values: any) {
     console.log(values);
     setFormValue(values);
   }
   const handleClick = () => {
-    if (formValue) {
-      //   navigate("/display");
-    }
+    // if (formValue) {
+      console.log('hey')
+        navigate("/display",  { replace: true });
+    // }
   };
   useEffect(() => {
     if (formValue) {
@@ -76,10 +77,10 @@ const Form = () => {
 
               <Box p={5}>
                 <Tabs
-                  variant="soft-rounded"
-                  colorScheme="purple"
-                  align="end"
-                  isLazy
+                variant="soft-rounded"
+                colorScheme="purple"
+                align="end"
+                isLazy
                 >
                   <FormLabel> Height </FormLabel>
                   <TabList>
@@ -196,7 +197,7 @@ const Form = () => {
                 <RadioGroup>
                   <Stack direction={["column", "row"]} spacing="13px">
                     {arrayOfSize.length > 0 &&
-                      arrayOfSize?.map((size, idx) => {
+                      arrayOfSize?.map((size:number, idx) => {
                         return (
                           <Radio
                             p={1}
@@ -210,9 +211,9 @@ const Form = () => {
                         );
                       })}
                   </Stack>
-                  <Stack direction={["column", "row"]} spacing="10px">
+                 <Stack direction={["column", "row"]} spacing="10px">
                     {arrayOfPlusSize.length > 0 &&
-                      arrayOfPlusSize?.map((plussize, idx) => {
+                      arrayOfPlusSize?.map((plussize:number, idx) => {
                         return (
                           <Radio
                             p={2}
@@ -225,7 +226,7 @@ const Form = () => {
                           </Radio>
                         );
                       })}
-                  </Stack>
+                  </Stack> 
                 </RadioGroup>
                 <FormErrorMessage>
                   {errors.plussize && errors.plussize.message}
@@ -250,8 +251,8 @@ const Form = () => {
               </Stack>
             </Stack>
           </Box>
-        </Stack>
-      </form>
+        </Stack> 
+       </form>
     </Box>
   );
 };
