@@ -30,10 +30,9 @@ const navigate = useNavigate()
     setFormValue(values);
   }
   const handleClick = () => {
-    // if (formValue) {
-      console.log('hey')
+    if (formValue) {
         navigate("/display",  { replace: true });
-    // }
+    }
   };
   useEffect(() => {
     if (formValue) {
