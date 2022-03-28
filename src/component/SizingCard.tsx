@@ -81,7 +81,7 @@ const SizingCard = ({ userFormData }: UserFormDataProp) => {
               >
                 <Box p="6">
                   <Box display="flex" alignItems="baseline">
-                    <Badge borderRadius="full" px="2" colorScheme="orange">
+                    <Badge borderRadius="full" px="2" colorScheme="purple">
                       Sizing
                     </Badge>
                     <Box
