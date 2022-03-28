@@ -3,7 +3,8 @@ import React from "react";
 import HeadingInfo from "./HeadingInfo";
 import SizingCard from "./SizingCard";
 import MeasurementMsg from "./MeasurementMsg";
-import { ValuesProps, UserFormDataProp } from "../interface.model";
+import { ValuesProps} from "../interface.model";
+
 const ProductCard = () => {
   const retrivedUserData: ValuesProps = JSON.parse(
     localStorage.getItem("form") || "{}"
@@ -15,13 +16,13 @@ const ProductCard = () => {
       <Center height="50px">
         <Divider orientation="horizontal" size="100px" />
       </Center>
-      {
-        retrivedUserData ? 
-      <SizingCard userFormData={retrivedUserData} />
-      : <Box display="flex" justifyContent="center">
-        <MeasurementMsg />
-      </Box> 
-      }
+      {retrivedUserData ? (
+        <SizingCard userFormData={retrivedUserData} />
+      ) : (
+        <Box display="flex" justifyContent="center">
+          <MeasurementMsg />
+        </Box>
+      )}
     </Box>
   );
 };

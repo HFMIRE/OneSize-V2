@@ -27,14 +27,14 @@ const HeadingInfo = () => {
                   position: "absolute",
                   bottom: 1,
                   left: 0,
-                  bg: "orange.200",
+                  bg: "purple.200",
                   zIndex: -1,
                 }}
               >
                 Find your size once,
               </Text>
               <br />
-              <Text as={"span"} color={"orange.400"}>
+              <Text as={"span"} color={"purple.400"}>
                 use it everywhere!
               </Text>
             </Heading>

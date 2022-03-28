@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from "react";
 import {
   Box,
-  Input,
   Select,
   Stack,
   Button,
   Heading,
   Text,
-  HStack,
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import { Radio, RadioGroup } from "@chakra-ui/react";
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import { FormControl, FormLabel, FormErrorMessage } from "@chakra-ui/react";
 import { ValuesProps } from "../interface.model";
 import { useNavigate } from "react-router-dom";
@@ -26,19 +23,16 @@ const navigate = useNavigate()
   const arrayOfSize: number[] = [4, 6, 8, 10, 12, 14, 16, 18];
   const arrayOfPlusSize: number[] = [20, 22, 24, 26, 28, 30, 32];
   function onSubmit(values: any) {
-    console.log(values);
     setFormValue(values);
+    navigate("/display",  { replace: true });
   }
-  const handleClick = () => {
-    if (formValue) {
-        navigate("/display",  { replace: true });
-    }
-  };
   useEffect(() => {
     if (formValue) {
       localStorage.setItem("form", JSON.stringify(formValue));
     }
   }, [formValue]);
+
+
 
   return (
     <Box>
@@ -49,143 +43,18 @@ const navigate = useNavigate()
               Find your size
             </Heading>
             <Text fontSize={"lg"} color={"gray.600"}>
-              to enjoy accurate sizing across different brands.
+             choosing your size from the brand that fit you the best. 
             </Text>
           </Stack>
           <Box rounded={"lg"} boxShadow={"lg"} p={8}>
             <Stack spacing={4}>
-              <Box>
-                <FormControl id="firstName" isRequired>
-                  <FormLabel> Name</FormLabel>
-                  <Input
-                    type="text"
-                    placeholder="name"
-                    {...register("name", {
-                      required: "This is required",
-                      minLength: {
-                        value: 4,
-                        message: "Minimum length should be 4",
-                      },
-                    })}
-                  />
-                  <FormErrorMessage>
-                    {errors.name && errors.name.message}
-                  </FormErrorMessage>
-                </FormControl>
-              </Box>
-
-              <Box p={5}>
-                <Tabs
-                variant="soft-rounded"
-                colorScheme="purple"
-                align="end"
-                isLazy
-                >
-                  <FormLabel> Height </FormLabel>
-                  <TabList>
-                    <Tab>Meter </Tab>
-                    <Tab>Feet </Tab>
-                  </TabList>
-                  <TabPanels>
-                    <TabPanel>
-                      <Box>
-                        <FormControl id="height">
-                          <HStack>
-                            <Input
-                              type="text"
-                              placeholder="180"
-                              {...register("heightm")}
-                            />
-                            <Text fontSize="md"> m</Text>
-                          </HStack>
-                          <FormErrorMessage>
-                            {errors.heightm && errors.heightm.message}
-                          </FormErrorMessage>
-                        </FormControl>
-                      </Box>
-                    </TabPanel>
-                    <TabPanel>
-                      <Box>
-                        <FormControl id="height">
-                          <HStack>
-                            <Input
-                              type="text"
-                              placeholder="5 "
-                              {...register("heightft")}
-                            />
-                            <Text fontSize="md"> ft</Text>
-                            <Input
-                              type="text"
-                              placeholder="10"
-                              {...register("heightinch")}
-                            />
-                          </HStack>
-                          <FormErrorMessage>
-                            {errors.heightft && errors.heightft.message}
-                          </FormErrorMessage>
-                        </FormControl>
-                      </Box>
-                    </TabPanel>
-                  </TabPanels>
-                </Tabs>
-              </Box>
-              <Box p={5}>
-                <Tabs
-                  variant="soft-rounded"
-                  colorScheme="purple"
-                  align="end"
-                  isLazy
-                >
-                  <FormLabel>Weight</FormLabel>
-                  <TabList>
-                    <Tab>Kilogram</Tab>
-                    <Tab>Pounds</Tab>
-                  </TabList>
-
-                  <TabPanels>
-                    <TabPanel>
-                      <Box>
-                        <FormControl id="weight">
-                          <HStack>
-                            <Input
-                              type="text"
-                              placeholder="75"
-                              {...register("weightkg")}
-                            />
-                            <Text fontSize="md"> kg</Text>
-                          </HStack>
-                          <FormErrorMessage>
-                            {errors.weightkg && errors.weightkg.message}
-                          </FormErrorMessage>
-                        </FormControl>
-                      </Box>
-                    </TabPanel>
-                    <TabPanel>
-                      <Box>
-                        <FormControl id="weight">
-                          <HStack>
-                            <Input
-                              type="text"
-                              placeholder="120"
-                              {...register("weightlbs")}
-                            />
-                            <Text fontSize="md"> lbs</Text>
-                          </HStack>
-                          <FormErrorMessage>
-                            {errors.weightlbs && errors.weightlbs.message}
-                          </FormErrorMessage>
-                        </FormControl>
-                      </Box>
-                    </TabPanel>
-                  </TabPanels>
-                </Tabs>
-              </Box>
               <FormControl id="brand">
                 <FormLabel>Brand</FormLabel>
                 <Select placeholder="Select option" {...register("brand")}>
                   <option value="ASOS">ASOS</option>
                   <option value="PLT">PLT</option>
                   <option value="BOOHOO">BOOHOO</option>
+                  <option value="Missguided">Missguided</option>
                 </Select>
               </FormControl>
               <FormErrorMessage>
@@ -243,7 +112,6 @@ const navigate = useNavigate()
                   }}
                   isLoading={isSubmitting}
                   type="submit"
-                  onClick={handleClick}
                 >
                   Find your one size
                 </Button>

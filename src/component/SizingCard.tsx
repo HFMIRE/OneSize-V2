@@ -1,13 +1,11 @@
-import { Badge, Box, HStack, SimpleGrid } from "@chakra-ui/react";
+import { Badge, Box, HStack, SimpleGrid, Avatar } from "@chakra-ui/react";
 import React from "react";
 import { UserFormDataProp } from "../interface.model";
 import { SampleSize } from "../SampleSize";
-import { Avatar } from "@chakra-ui/react";
-// import { ValuesProps, SampleSizingProps} from '../interface.model'
+
 const brandAvatar = [
   {
     Brand: "BOOHOO",
-    //&auto=format&fit=crop&w=334&q=80
     avatar:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8-GLLw4pF1ZvVTkXvNz0kNrgicmeExxbtHA&usqp=CAU&auto=format&fit=crop&w=334&q=80",
   },
@@ -21,6 +19,10 @@ const brandAvatar = [
     avatar:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxlGJ60C5pRjLCxPsMV3L-4eUnEhOu7L78iw&usqp=CAU&auto=format&fit=crop&w=334&q=80",
   },
+  {
+    Brand: "Missguided", 
+    avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThFzAzoUuJ_7DnJhDpeq0sF7QX4cT0A4A4NA&usqp=CAU&fit=crop&w=334&q=80"
+  }
 ];
 const SizingCard = ({ userFormData }: UserFormDataProp) => {
   let convertSize: any;
@@ -36,7 +38,6 @@ const SizingCard = ({ userFormData }: UserFormDataProp) => {
   }
 
   function convertSizetoMeasurement(brand: string, size: number) {
-    console.log("size", size);
     if (size % 2 === 0) {
       convertSize = SampleSize.filter(
         (sample) => sample.Brand === brand && sample.Size === size
@@ -46,16 +47,16 @@ const SizingCard = ({ userFormData }: UserFormDataProp) => {
     }
   }
   convertSizetoMeasurement(userFormData.brand, SizeNum);
-  console.log(convertSize);
+
   let filterSize: any;
 
   function matchingSize(user: any) {
     const { Brand, Bust, Waist, Hips } = user[0];
     filterSize = SampleSize.filter((sample) => {
       const isDifferentBrand = sample.Brand !== Brand;
-      const isSameBust = sample.Bust >= Bust && sample.Bust < Bust + 8;
-      const isSameWaist = sample.Waist >= Waist && sample.Waist < Waist + 8;
-      const isSameHip = sample.Hips >= Hips && sample.Hips < Hips + 8;
+      const isSameBust = sample.Bust >= Bust && sample.Bust < Bust + 5;
+      const isSameWaist = sample.Waist >= Waist && sample.Waist < Waist + 5;
+      const isSameHip = sample.Hips >= Hips && sample.Hips < Hips + 5;
       return isSameBust && isSameWaist && isSameHip && isDifferentBrand;
     });
     return filterSize;
