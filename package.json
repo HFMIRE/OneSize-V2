@@ -9,6 +9,7 @@
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^10.4.9",
     "@testing-library/user-event": "^12.8.3",
+    "@types/chrome": "^0.0.181",
     "@types/jest": "^25.2.3",
     "@types/node": "^12.20.46",
     "@types/react-dom": "^16.9.14",
